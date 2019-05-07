@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>IESCP开发平台演示系统</title>
+	<link type="image/x-icon" rel="icon" href="favicon.ico" mce_href="favicon.ico">
+	<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" mce_href="favicon.ico">
+	<link type="image/x-icon" rel="Bookmark" href="favicon.ico" mce_href="favicon.ico"/>
+</head>
+
+<body class="main">
+	<div class="top">
+		<div class="userinfo">
+			<div class="photo" title="个人资料"></div>
+			<div class="info">
+				<div id="issDpt" class="dpt"></div>
+				<div><span id="issUser" class="user"></span><div class="opr"><span id="msg" class="msg" title="系统消息">&nbsp;</span><span id="help" class="help" title="帮助文档">&nbsp;</span><span id="logout" class="exit" title="退出系统">&nbsp;</span></div></div>
+			</div>
+		</div>
+		<div class="logo" title="IESCP开发平台演示系统"></div>
+	</div>
+	<div id="mmenu" class="mmenu">
+		<div id="menu" class="menu">
+			<div class="toright" onselectstart="return false;" title="点击显示更多菜单">&nbsp;</div>
+			<div class="toleft" onselectstart="return false;" title="点击显示更多菜单">&nbsp;</div>
+		</div>
+	</div>
+	<div class="pc"><ul id="path" class="path"></ul><span class="sysdate"></span></div>
+	<div class="ccontain">
+		<div class="contain" id="contain"></div>
+		<div class="copyright" id="copyright">
+			版权所有 &copy; 软通动力信息技术有限公司&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy; 2013 iSoftStone Holdings Limited. All rights reserved.
+		</div>
+	</div>
+	
+
+	<script type="text/javascript" src="./core/js/sea-3.0.0.js" id="seajsnode"></script>
+	<link rel="stylesheet" href="./core/theme/default/css/iss-main.css">
+	<link rel="stylesheet" href="./core/theme/default/css/iss-component.css">
+	<link rel="stylesheet" href="./core/theme/default/css/normalize.css">
+
+
+	<script type="text/javascript">
+		
+		seajs.config( {    
+		    // 路径配置
+		    alias: {
+		    	'iss-address': './address.js',
+                'CSSctrl': './static/css/CSSctrl.css',
+		    	'project': './static/js/health/project/project.js',
+				'test': './static/js/health/test.js'
+		    },			    
+		    map: [
+		      [ /^(.*\.(?:js))(.*)$/i, '$1?'],
+		      [ /^(.*\.(?:css))(.*)$/i, '$1?']
+		    ]
+		} );
+
+	
+		//加载入口模块
+		seajs.use( [ "issapi" ,"layer-css", "ztree-css" ], function(main) {
+
+			main.init();
+			
+		} );
+			
+	</script>
+</body>
+
+</html>
